@@ -7,7 +7,6 @@ function catFunc(cmd) {
     second = cmd.split(" ")[1];
   }
   if (second && first === "cat") {
-    //if(second.includes("."))
     fs.readFile(second, "utf8", function (error, data) {
       if (error) {
         throw error;
@@ -15,7 +14,6 @@ function catFunc(cmd) {
         process.stdout.write(data);
       }
     });
-    //process.stdout.write("\nprompt > ");
   }
 }
 module.exports = catFunc;
